@@ -1,0 +1,6 @@
+dvda
+*.pyc
+.DS_Store
+__pycache__
+/static
+db.sqlite3
