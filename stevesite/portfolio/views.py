@@ -5,6 +5,8 @@ from .models import Job
 def index(request):
 	jobs = Job.objects.all()
 
-	context = {'jobs':jobs}
+	jobs_with_ruby = Job.objects.filter(languages_used__language_name__startswith="Ruby")
+
+	context = {'jobs':jobs, 'ruby_jobs':jobs_with_ruby}
 
 	return render(request, "portfolio/index.html", context)

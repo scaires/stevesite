@@ -7,11 +7,28 @@
 
 	<h1>Steve Caires</h1>
 
-	{% for job in jobs %}
-	<section>
-		<h2>{{ job.job_title }}</h2>
-		<h3>{{ job.company_name}}</h3>
-		<span>{{ job.start_date }} - {{ job.end_date }}</span>
-	</section>
-	{% endfor %}
+	<article>
+		<h2>Job History</h2>
+		{% for job in jobs %}
+			<section>
+				<h3>{{ job.job_title }}</h3>
+				<h4>{{ job.company_name}}</h4>
+				<span>{{ job.start_date }} - {{ job.end_date }}</span><p>
+				Used Languages:
+				<ul>
+					{% for l in job.languages_used.all %}
+					<li>{{ l.language_name }}</li>
+					{% endfor %}
+			</section>
+
+		{% endfor %}
+
+		<h2>Jobs with Ruby</h2>
+
+		{% for job in ruby_jobs %}
+			<li>{{ job.job_title }}</li>
+		{% endfor %}
+
+	</article>
+
 </html>
