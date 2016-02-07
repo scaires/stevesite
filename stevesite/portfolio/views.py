@@ -1,10 +1,10 @@
 from django.shortcuts import render
+from .models import Job
 
 # Create your views here.
 def index(request):
-	context = {
-		'name':'Steve',
-		'title':'Hello world',
-		'list':['a', 'list', 'of', 'words']
-	}
+	jobs = Job.objects.all()
+
+	context = {'jobs':jobs}
+
 	return render(request, "portfolio/index.html", context)

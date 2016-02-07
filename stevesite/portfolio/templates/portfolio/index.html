@@ -1,11 +1,16 @@
 <html>
-	<title>{{ title }}</title>
+	<!-- Latest compiled and minified CSS -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
 
-	<h1>Hello, {{ name }}</h1>
+	<title>Steve Caires</title>
 
-	<UL>
-		{% for word in list %}
-			<li>{{ word }}</li>
-		{% endfor %}
-	</UL>
+	<h1>Steve Caires</h1>
+
+	{% for job in jobs %}
+	<section>
+		<h2>{{ job.job_title }}</h2>
+		<h3>{{ job.company_name}}</h3>
+		<span>{{ job.start_date }} - {{ job.end_date }}</span>
+	</section>
+	{% endfor %}
 </html>
