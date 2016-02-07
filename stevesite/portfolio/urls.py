@@ -18,5 +18,6 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.index)
+    url(r'^$', views.index),
+    url(r'jobs/(?P<job_id>[0-9]+)/$', views.job_detail, name="job_detail"),
 ]

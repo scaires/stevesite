@@ -10,3 +10,8 @@ def index(request):
 	context = {'jobs':jobs, 'ruby_jobs':jobs_with_ruby}
 
 	return render(request, "portfolio/index.html", context)
+
+def job_detail(request, job_id):
+	job = Job.objects.get(id=job_id)
+
+	return render(request, "portfolio/job_details.html", {"job": job})
