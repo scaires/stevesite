@@ -23,11 +23,13 @@
 
 		{% endfor %}
 
-		<h2>Jobs with Ruby</h2>
+		{% if ruby_jobs %}
+			<h2>Jobs with Ruby</h2>
 
-		{% for job in ruby_jobs %}
-			<li>{{ job.job_title }}</li>
-		{% endfor %}
+			{% for job in ruby_jobs %}
+				<li>{{ job.job_title }}</li>
+			{% endfor %}
+		{% endif %}
 
 	</article>
 
